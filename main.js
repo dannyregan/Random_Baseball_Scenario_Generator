@@ -13,7 +13,18 @@ const chooseOuts = () => Math.floor(Math.random() * 3);
 
 // This helper function randomly determines how the runners are positioned on base
 const chooseRunners = () => {
-
+    const oneRunner = ['first', 'second', 'third'];
+    const twoRunners = ['first and second', 'first and third', 'second and third'];
+    let runners = Math.floor(Math.random() * 4);
+    if (runners === 0) {
+        return 'Nobody on';
+    } else if (runners === 1) {
+        return 'Man on ' + oneRunner[Math.floor(Math.random() * oneRunner.length)];
+    } else if (runners === 2) {
+        return 'Men on ' + twoRunners[Math.floor(Math.random() * twoRunners.length)];
+    } else {
+        return 'Bases loaded';
+    }
 }
 
 // This helper function randomly determines if the hitter is a lefty or righty
@@ -50,7 +61,8 @@ const run = () => {
     let outs = chooseOuts();
     let stance = chooseStance();
     let order = chooseOrder();
-    console.log(`${inning}, ${outs} outs. The hitter is batting ${stance} and is ${order} in the line-up.`)
+    let runners = chooseRunners();
+    console.log(`${inning}, ${outs} outs. ${runners}. The hitter is batting ${stance} and is ${order} in the line-up.`)
 }
 
 run();
