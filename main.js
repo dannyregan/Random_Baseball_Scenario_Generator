@@ -4,18 +4,17 @@ const chooseInning = () => {
     const topOrBottom = Math.floor(Math.random() * 2);
     if (topOrBottom === 0) {
         return 'Top ' + inning;
-    } else {
-        return 'Bottom ' + inning;
     }
+    return 'Bottom ' + inning;
 }
 
 // This helper function determines the number of outs at random from 0 to 2
-const chooseOuts = () => {
-    return Math.floor(Math.random() * 3);
-}
+const chooseOuts = () => Math.floor(Math.random() * 3);
 
 // This helper function randomly determines how the runners are positioned on base
+const chooseRunners = () => {
 
+}
 
 // This helper function randomly determines if the hitter is a lefty or righty
 const chooseStance = () => {
