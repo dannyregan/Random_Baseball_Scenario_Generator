@@ -56,13 +56,22 @@ const chooseOrder = () => {
 }
 
 // This main function calls each helper function above and displays the inning information in a single sentence.
-const run = () => {
+function run() {
     let inning = chooseInning();
     let outs = chooseOuts();
     let stance = chooseStance();
     let order = chooseOrder();
     let runners = chooseRunners();
-    console.log(`${inning}, ${outs} outs. ${runners}. The hitter is batting ${stance} and is ${order} in the line-up.`)
+    let result = `${inning}, ${outs} outs. ${runners}. The hitter is batting ${stance} and is ${order} in the line-up.`;
+    return result;
 }
 
-run();
+function handleClick() {
+    var result = run();
+    paragraph.textContent = result;
+}
+
+var button = document.getElementById('button');
+var paragraph = document.getElementById('result');
+
+button.addEventListener('click', handleClick);
