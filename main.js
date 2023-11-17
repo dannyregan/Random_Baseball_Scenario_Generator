@@ -62,13 +62,13 @@ function run() {
     let stance = chooseStance();
     let order = chooseOrder();
     let runners = chooseRunners();
-    let result = `${inning}, ${outs} outs. ${runners}. The hitter is batting ${stance} and is ${order} in the line-up.`;
+    let result = `<strong>${inning}</strong>, <strong>${outs} outs</strong>. <strong>${runners}</strong>. The hitter is batting <strong>${stance}</strong> and is <strong>${order}</strong> in the line-up.`;
     return result;
 }
 
 function handleClick() {
     var result = run();
-    paragraph.textContent = result;
+    paragraph.innerHTML = result;
 }
 
 var button = document.getElementById('button');
